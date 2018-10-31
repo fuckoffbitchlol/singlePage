@@ -1,0 +1,22 @@
+<!doctype html
+<!-- test html file for socket io test-->
+<html>
+<head>
+    <!-- did the test code use jquery ?-->
+    <script src = "jq/jquery-1.9.1.js"></script>
+    <!-- need to load library here ?-->
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        // load socket io js because we need this io function here, it seems ugly with a single page app
+        // messege means socket.js will send countIdx to this, the question is why use count not message
+        // its kind of confusing for me
+        io.connect().on('message', function(count){
+            // need jquery cause we need $ here
+            $('body').html(count);
+        });
+    </script>
+</head>
+<body>
+    Loading...
+</body>
+</html>
